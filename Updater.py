@@ -1,5 +1,8 @@
 import requests
 import os
+from tk import *
+from tkinter import ttk
+from tkinter import *
 
 
 FILEDIRECTORY = os.getcwd()
@@ -42,4 +45,13 @@ def Download(url, destination_path):
         print(f"Échec du téléchargement du fichier. Code de statut : {response.status_code}")
 
 
-# Download(GetLatestRelease("https://github.com/ninjagoku4560/PyCompte"), DATADIRECTORY+"/LatestRelease.zip")
+def startUpdaterApp():
+    app = Tk()
+    frm = ttk.Frame(app, padding=10)
+    frm.grid()
+    ttk.Button(frm, text="Quit", command=Download(GetLatestRelease("https://github.com/ninjagoku4560/PyCompte"),
+                                                  DATADIRECTORY + "/LatestRelease.zip")).grid(column=1, row=0)
+    app.mainloop()
+
+
+startUpdaterApp()

@@ -1,5 +1,5 @@
 import os
-import Cryptage
+import Cryptage, Updater
 import tkinter
 
 FILEPATH = os.path.abspath(__file__)
@@ -15,4 +15,8 @@ def init():
         Cryptage.writeKey(DATADIRECTORY)
 
 
-init()
+def start():
+    init()
+
+
+start()
